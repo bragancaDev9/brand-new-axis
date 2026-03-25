@@ -9,5 +9,4 @@ public class BrandNewAxisApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BrandNewAxisApplication.class, args);
 	}
-
 }
