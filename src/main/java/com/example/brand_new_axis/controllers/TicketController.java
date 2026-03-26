@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -61,6 +62,16 @@ public class TicketController {
 	}
 	
 	// Update
+	@PutMapping("/{id}")
+	public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody TicketRequestDTO ticketDTO) { 
+		Ticket ticket = new Ticket();
+		ticket.setId(id);
+		ticket.setTitle(ticketDTO.getTitle());
+		ticket.setDescription(ticketDTO.getDescription());
+		ticket = ticketService.update(ticket);
+		
+		return ResponseEntity.noContent().build();
+	}
 	
 	// Delete
 }

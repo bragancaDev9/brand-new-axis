@@ -29,6 +29,18 @@ public class TicketService {
 	}
 	
 	// Update
+	public Ticket update(Ticket ticket) {
+		Ticket newTicket = ticketRepository.findById(ticket.getId()).orElseThrow(() -> new ObjectNotFoundException("Object not found. Id: " + ticket.getId()));
+		
+		updateData(newTicket, ticket);
+		
+		return ticketRepository.save(newTicket);
+	}
+	
+	private void updateData(Ticket newTicket, Ticket ticket) {
+		newTicket.setTitle(ticket.getTitle());
+		newTicket.setDescription(ticket.getDescription());
+	}
 	
 	// Delete
 }
