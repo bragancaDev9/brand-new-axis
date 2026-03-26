@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.brand_new_axis.entities.Ticket;
 import com.example.brand_new_axis.repositories.TicketRepository;
+import com.example.brand_new_axis.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class TicketService {
@@ -18,6 +19,10 @@ public class TicketService {
 	// Read
 	public List<Ticket> findAll() {
 		return ticketRepository.findAll();
+	}
+	
+	public Ticket findById(Long id) {
+		return ticketRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Object not found. Id: " + id));
 	}
 	
 	// Update

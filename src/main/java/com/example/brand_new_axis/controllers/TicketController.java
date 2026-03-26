@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,6 +32,15 @@ public class TicketController {
 				.collect(Collectors.toList());
 		
 		return ResponseEntity.ok(listTicketDTO);
+	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<TicketResponseDTO> findById(@PathVariable Long id) {
+		Ticket ticket = ticketService.findById(id);
+		
+		TicketResponseDTO ticketDTO = new TicketResponseDTO(ticket);
+		
+		return ResponseEntity.ok(ticketDTO);
 	}
 	
 	// Update
