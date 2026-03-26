@@ -15,7 +15,10 @@ public class TicketService {
 	private TicketRepository ticketRepository;
 	
 	// Create
-	
+	public void insert(Ticket ticket) {
+		ticketRepository.save(ticket);
+	}
+
 	// Read
 	public List<Ticket> findAll() {
 		return ticketRepository.findAll();

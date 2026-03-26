@@ -1,7 +1,6 @@
 package com.example.brand_new_axis.configurations;
 
 import java.util.Arrays;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -19,8 +18,8 @@ public class TestConfig implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-		Ticket t1 = new Ticket(null, "Title", "Description", new Date());
-		Ticket t2 = new Ticket(null, "Title-1", "Description-2", new Date());
+		Ticket t1 = new Ticket(null, "Title", "Description");
+		Ticket t2 = new Ticket(null, "Title-1", "Description-2");
 
 		ticketRepository.saveAll(Arrays.asList(t1, t2));
 	}

@@ -24,11 +24,11 @@ public class Ticket implements Serializable {
 
 	public Ticket() {}
 
-	public Ticket(Long id, String title, String description, Date date) {
+	public Ticket(Long id, String title, String description) {
 		this.id = id;
 		this.title = title;
 		this.description = description;
-		this.date = date;
+		this.date = new Date();
 	}
 
 	public Long getId() {

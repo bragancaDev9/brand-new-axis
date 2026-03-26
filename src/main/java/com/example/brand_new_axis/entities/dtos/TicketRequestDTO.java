@@ -1,20 +1,16 @@
 package com.example.brand_new_axis.entities.dtos;
 
-import java.util.Date;
-
 import com.example.brand_new_axis.entities.Ticket;
 
-public class TicketResponseDTO {
+public class TicketRequestDTO {
 	private String title;
 	private String description;
-	private Date date;
 	
-	public TicketResponseDTO() {}
+	public TicketRequestDTO() {}
 
-	public TicketResponseDTO(Ticket ticket) {
+	public TicketRequestDTO(Ticket ticket) {
 		title = ticket.getTitle();
 		description = ticket.getDescription();
-		date = ticket.getDate();
 	}
 
 	public String getTitle() {
@@ -33,11 +29,4 @@ public class TicketResponseDTO {
 		this.description = description;
 	}
 
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
 }
