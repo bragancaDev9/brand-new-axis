@@ -21,7 +21,7 @@ public class Ticket implements Serializable {
 	private String title;
 	private String description;
 	private Date date;
-	
+
 	public Ticket() {}
 
 	public Ticket(Long id, String title, String description, Date date) {
