@@ -43,4 +43,8 @@ public class TicketService {
 	}
 	
 	// Delete
+	public void delete(Long id) {
+		findById(id);
+		ticketRepository.deleteById(id);
+	}
 }
