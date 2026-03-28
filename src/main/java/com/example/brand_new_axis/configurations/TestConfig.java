@@ -11,7 +11,7 @@ import com.example.brand_new_axis.entities.Ticket;
 import com.example.brand_new_axis.repositories.TicketRepository;
 
 @Configuration
-@Profile("test")
+@Profile("dev")
 public class TestConfig implements CommandLineRunner {
 	@Autowired
 	private TicketRepository ticketRepository;
